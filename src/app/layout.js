@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "LaunchGraph — Public Launch Intelligence",
+  title: "LaunchGraph",
   description:
     "Public intelligence for technology product launches. Analyze how high-distribution technology launches are framed across public portfolio patterns.",
 };
