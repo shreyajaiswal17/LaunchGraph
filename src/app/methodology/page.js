@@ -1,5 +1,5 @@
 import PageHeader from "@/components/PageHeader";
-import { DATASET_LAST_REVIEWED } from "@/data/launches";
+import { DATASET_LAST_REVIEWED, launches } from "@/data/launches";
 import { getTotalLaunches } from "@/lib/analytics";
 import { ExternalLink, ShieldCheck, Calendar } from "lucide-react";
 
@@ -44,7 +44,7 @@ export default function MethodologyPage() {
             </div>
           </div>
           <p className="text-sm leading-relaxed text-neutral-600 mb-4">
-            The current research dataset scope comprises <strong>nine publicly listed case studies</strong>. The dataset was retrieved directly from Social Capital Inc.’s public <a href="https://www.sociallcapital.com/work" target="_blank" rel="noopener noreferrer" className="text-[#991b1b] underline font-medium inline-flex items-center gap-0.5">Selected Work pages <ExternalLink className="h-3 w-3 inline" /></a>.
+            The current research dataset scope comprises <strong>{launches.length} publicly listed case studies</strong>. The dataset was retrieved directly from Social Capital Inc.’s public <a href="https://www.sociallcapital.com/work" target="_blank" rel="noopener noreferrer" aria-label="Social Capital Selected Work (opens in new tab)" className="text-[#991b1b] underline font-medium inline-flex items-center gap-0.5">Selected Work pages <ExternalLink className="h-3 w-3 inline" aria-hidden="true" /></a>.
           </p>
           <div className="space-y-2 rounded-md border border-neutral-200 bg-neutral-50/80 p-4 text-xs text-neutral-700">
             <p className="font-semibold text-[#1a1a1a]">Provenance Boundaries:</p>

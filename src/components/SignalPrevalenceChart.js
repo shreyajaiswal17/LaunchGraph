@@ -50,7 +50,11 @@ export default function SignalPrevalenceChart() {
       </div>
 
       {/* Chart — hidden from screen readers; accessible table below is the a11y equivalent */}
-      <div className="h-64 w-full" aria-hidden="true">
+      <div
+        className="h-64 w-full"
+        role="img"
+        aria-label="Bar chart showing the prevalence of observable signals across selected-work case studies"
+      >
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}

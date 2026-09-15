@@ -11,7 +11,7 @@ export default function EvidenceMatrix() {
             Launch Evidence Matrix
           </h3>
           <p className="text-xs text-neutral-500">
-            Observation matrix across all 9 verified case studies
+            Observation matrix across all {launches.length} verified case studies
           </p>
         </div>
       </div>

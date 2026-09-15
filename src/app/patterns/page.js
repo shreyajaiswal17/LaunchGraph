@@ -2,6 +2,7 @@ import PageHeader from "@/components/PageHeader";
 import EvidenceMatrix from "@/components/EvidenceMatrix";
 import OpeningTypeChart from "@/components/OpeningTypeChart";
 import SignalPrevalenceChart from "@/components/SignalPrevalenceChart";
+import { launches } from "@/data/launches";
 import { ShieldAlert, BookOpen } from "lucide-react";
 import Link from "next/link";
 
@@ -54,7 +55,7 @@ export default function PatternsPage() {
               Research Scope & Analytical Boundaries
             </h3>
             <p className="text-xs text-neutral-600 leading-relaxed">
-              Observed patterns are external inferences derived from 9 publicly available case study records. They do not constitute statements regarding Social Capital’s internal operating procedures, proprietary creative frameworks, or unreleased campaign outcomes.
+              Observed patterns are external inferences derived from {launches.length} publicly available case study records. They do not constitute statements regarding Social Capital’s internal operating procedures, proprietary creative frameworks, or unreleased campaign outcomes.
             </p>
             <div className="pt-1">
               <Link

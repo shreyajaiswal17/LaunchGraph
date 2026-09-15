@@ -164,10 +164,11 @@ export default function FeaturedAccountsPage() {
                 href={account.sourceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs font-medium text-neutral-700 hover:text-[#991b1b] transition-colors"
+                aria-label={`${account.company} public case study on Social Capital (opens in new tab)`}
+                className="inline-flex items-center gap-1 rounded-sm text-xs font-medium text-neutral-700 hover:text-[#991b1b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#991b1b] focus-visible:ring-offset-1"
               >
                 <span>View Case Study</span>
-                <ExternalLink className="h-3 w-3" />
+                <ExternalLink className="h-3 w-3" aria-hidden="true" />
               </a>
             </div>
           </div>

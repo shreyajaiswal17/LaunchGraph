@@ -7,7 +7,7 @@ export default function Footer() {
   const totalLaunches = getTotalLaunches();
 
   return (
-    <footer className="mt-16 border-t border-neutral-200 bg-[#fbfbfb] py-10 text-xs text-neutral-600">
+    <footer className="mt-16 w-full border-t border-neutral-200 bg-[#fbfbfb] px-4 py-10 text-xs text-neutral-600 sm:px-6 lg:px-8">
       <div className="space-y-6">
         {/* Top row: brand + links */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -9,6 +9,8 @@ import { NAV_ITEMS } from "./Sidebar";
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const menuButtonRef = useRef(null);
+  const wasOpenRef = useRef(false);
 
   // Handle escape key to close menu
   useEffect(() => {
@@ -25,6 +27,11 @@ export default function MobileNavigation() {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      wasOpenRef.current = true;
+    } else if (wasOpenRef.current) {
+      document.body.style.overflow = "";
+      menuButtonRef.current?.focus();
+      wasOpenRef.current = false;
     } else {
       document.body.style.overflow = "";
     }
@@ -49,6 +56,7 @@ export default function MobileNavigation() {
       </Link>
 
       <button
+        ref={menuButtonRef}
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
