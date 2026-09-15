@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbfbfb;
+  --foreground: #1a1a1a;
 }
 
 @theme inline {
@@ -12,15 +12,48 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Prevent horizontal overflow at any viewport width */
+  overflow-x: hidden;
+}
+
+/* ── Global focus-visible styles ─────────────────────────────────────── */
+/* Applied to all focusable elements that don't override with focus-visible: classes */
+:focus-visible {
+  outline: 2px solid #991b1b;
+  outline-offset: 2px;
+}
+
+/* Remove default focus ring when element has a Tailwind focus-visible class */
+.focus-visible\:outline-none:focus-visible {
+  outline: none;
+}
+
+/* ── Reduced-motion preferences ─────────────────────────────────────── */
+/* Honour the user's OS/browser preference to minimise motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Table overflow containment ─────────────────────────────────────── */
+/* Tables may only scroll within their direct container; they must not
+   cause the page to overflow horizontally at 375 px or any other width. */
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Chart container accessibility ──────────────────────────────────── */
+/* Recharts renders <svg> without a default role; ensure it is announced
+   correctly when a title/desc is present. */
+.recharts-wrapper svg {
+  overflow: visible;
 }
