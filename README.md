@@ -146,51 +146,6 @@ npm run build
 
 > **Dataset last reviewed:** `2026-09-15` — configured via `DATASET_LAST_REVIEWED` in `src/data/launches.js` and displayed in the site footer and Methodology page.
 
----
-
-## Project Structure
-
-```
-launchgraph/
-├── src/
-│   ├── app/
-│   │   ├── layout.js              # Root application shell & metadata
-│   │   ├── page.js                # Overview page (Metrics, Timeline, Charts)
-│   │   ├── globals.css            # Tailwind styling & color tokens
-│   │   ├── launches/
-│   │   │   ├── page.js            # Launches page with interactive filter table
-│   │   │   └── [slug]/
-│   │   │       └── page.js        # Dynamic SSG launch detail route
-│   │   ├── creators/
-│   │   │   └── page.js            # Featured launch accounts & distribution summary
-│   │   ├── patterns/
-│   │   │   └── page.js            # Message patterns & Evidence Matrix
-│   │   └── methodology/
-│   │       └── page.js            # Research governance & attribution disclaimers
-│   ├── components/
-│   │   ├── Sidebar.js             # Fixed desktop sidebar
-│   │   ├── MobileNavigation.js    # Responsive mobile drawer
-│   │   ├── PageHeader.js          # Shared page header component
-│   │   ├── MetricCard.js          # Statistical metric card
-│   │   ├── ConfidenceBadge.js     # Attribution & source count badge
-│   │   ├── StatusBadge.js         # Reusable taxonomy badge
-│   │   ├── LaunchTable.js         # Multi-filter interactive table
-│   │   ├── EvidenceMatrix.js      # Attribute presence/absence matrix
-│   │   ├── PortfolioTimeline.js   # Chronological selected-work timeline
-│   │   ├── SignalPrevalenceChart.js # Recharts horizontal bar chart
-│   │   ├── OpeningTypeChart.js    # Recharts narrative breakdown chart
-│   │   ├── InsightPanel.js        # Dynamic synthesis panel
-│   │   └── Footer.js              # Site footer with disclaimer & review date
-│   ├── data/
-│   │   └── launches.js            # Verified 9-record dataset & review constant
-│   └── lib/
-│       └── analytics.js           # Pure calculation & similarity functions
-├── package.json
-├── README.md
-└── eslint.config.mjs
-```
-
----
 
 ## Future Improvements
 
